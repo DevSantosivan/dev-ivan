@@ -1,0 +1,877 @@
+<div #portfolio class="portfolio">
+  <!-- ==================================================
+       PRELOADER
+  ================================================== -->
+
+  <div class="loader">
+    <div class="loader-inner">
+      <span class="loader-number">00</span>
+      <span class="loader-percent">%</span>
+
+      <div class="loader-line"></div>
+
+      <p>IVAN SANTOS / PORTFOLIO</p>
+    </div>
+  </div>
+
+  <!-- ==================================================
+       CUSTOM CURSOR
+  ================================================== -->
+
+  <div class="cursor">
+    <span>VIEW</span>
+  </div>
+
+  <!-- ==================================================
+       NAVBAR
+  ================================================== -->
+
+  <header class="navbar">
+    <a class="brand" href="#home"> IS<span>.</span> </a>
+
+    <nav>
+      <a class="nav-item" (click)="scrollTo('home')">HOME</a>
+      <a class="nav-item" (click)="scrollTo('projects')">WORK</a>
+      <a class="nav-item" (click)="scrollTo('about')">ABOUT</a>
+      <a class="nav-item" (click)="scrollTo('contact')">CONTACT</a>
+    </nav>
+
+    <button
+      class="nav-contact magnetic"
+      type="button"
+      (click)="scrollTo('contact')"
+    >
+      LET'S TALK
+      <span>↗</span>
+    </button>
+  </header>
+
+  <!-- ==================================================
+       HERO
+  ================================================== -->
+
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="status-dot"></span>
+        AVAILABLE FOR WORK
+      </div>
+
+      <div class="hero-title">
+        <div class="title-mask">
+          <h1 class="hero-title-line">IVAN</h1>
+        </div>
+
+        <div class="title-mask">
+          <h1 class="hero-title-line outline">SANTOS</h1>
+        </div>
+      </div>
+
+      <div class="hero-role">
+        <span class="arrow">↳</span>
+        SOFTWARE DEVELOPER
+      </div>
+
+      <div class="hero-copy">
+        <p>
+          I build digital products, web applications and experiences that turn
+          ideas into something real.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="button-primary magnetic">
+          EXPLORE MY WORK
+          <span>↗</span>
+        </a>
+
+        <a
+          href="ivansantos_resume.pdf.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button-secondary"
+        >
+          DOWNLOAD CV
+          <span>↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================================================
+         HERO VISUAL
+    ================================================== -->
+
+    <div class="hero-visual">
+      <div class="orbit"></div>
+      <div class="orbit-small"></div>
+
+      <div class="hero-decoration decoration-one">+</div>
+      <div class="hero-decoration decoration-two">×</div>
+      <div class="floating-dot decoration-three"></div>
+
+      <div class="hero-image">
+        <div class="image-number">01 / 04</div>
+
+        <img
+          src="/images/image.webp"
+          alt="Ivan Santos"
+          class="hero-profile-image"
+          width="800"
+          height="800"
+          fetchpriority="high"
+          decoding="async"
+        />
+
+        <div class="image-caption">
+          <span>CREATIVE</span>
+          <span>DEVELOPER</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <span>SCROLL TO EXPLORE</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+
+    <div class="hero-side">
+      <a
+        href="https://github.com/DevSantosivan"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GITHUB
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/ivan-santos-9414a33a3/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LINKEDIN
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       MARQUEE
+  ================================================== -->
+
+  <section class="marquee">
+    <div class="marquee-track">
+      <span>SOFTWARE DEVELOPER</span>
+      <i>✦</i>
+
+      <span>FULL-STACK</span>
+      <i>✦</i>
+
+      <span>AI INTEGRATION</span>
+      <i>✦</i>
+
+      <span>CREATIVE TECHNOLOGY</span>
+      <i>✦</i>
+
+      <span>SOFTWARE DEVELOPER</span>
+      <i>✦</i>
+
+      <span>FULL-STACK</span>
+      <i>✦</i>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       PROJECTS
+  ================================================== -->
+
+  <section id="projects" class="projects-section">
+    <div class="projects-header">
+      <div class="section-meta">
+        <span class="section-index">01</span>
+        <span class="section-label">SELECTED WORK</span>
+      </div>
+
+      <div class="projects-heading">
+        <h2>
+          SELECTED
+          <span>WORK.</span>
+        </h2>
+
+        <p>
+          A selection of digital products, platforms and experiences I've
+          designed and developed.
+        </p>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.number) {
+        <article
+          class="project-card"
+          [class.featured]="project.number === '01'"
+        >
+          <div class="project-media">
+            <img
+              [src]="project.image"
+              [alt]="project.title"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+            />
+
+            <div class="project-overlay"></div>
+
+            <div class="project-top">
+              <span>
+                {{ project.number }}
+              </span>
+
+              <span>
+                {{ project.category }}
+              </span>
+            </div>
+
+            <a
+              class="project-open"
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>LIVE</span>
+              <i class="bx bx-right-top-arrow-circle"></i>
+            </a>
+          </div>
+
+          <div class="project-info">
+            <div>
+              <span class="project-type">
+                {{ project.category }}
+              </span>
+
+              <h3>
+                {{ project.title }}
+                <em>{{ project.subtitle }}</em>
+              </h3>
+            </div>
+
+            <p>
+              {{ project.description }}
+            </p>
+
+            <div class="project-bottom">
+              <div class="project-tech">
+                @for (tech of project.technologies; track tech) {
+                  <span>
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+
+              <span class="project-arrow">↗</span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- ==================================================
+       STATS
+  ================================================== -->
+
+  <section class="stats-section">
+    <div class="stats-heading">
+      <span>02</span>
+      <p>A FEW NUMBERS</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <strong class="counter" data-value="3">00</strong>
+
+        <span>
+          YEARS<br />
+          EXPERIENCE
+        </span>
+      </div>
+
+      <div class="stat-item">
+        <strong class="counter" data-value="20">00</strong>
+
+        <span>
+          PROJECTS<br />
+          BUILT
+        </span>
+      </div>
+
+      <div class="stat-item">
+        <strong class="counter" data-value="15">00</strong>
+
+        <span>
+          TECHNOLOGIES<br />
+          EXPLORED
+        </span>
+      </div>
+
+      <div class="stat-item">
+        <strong>∞</strong>
+
+        <span>
+          THINGS<br />
+          TO BUILD
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       EXPERIENCE
+  ================================================== -->
+
+  <section id="experience" class="experience-section">
+    <div class="experience-header">
+      <div class="section-meta">
+        <span class="section-index">03</span>
+        <span class="section-label">EXPERIENCE</span>
+      </div>
+
+      <div class="experience-heading">
+        <h2>
+          HOW I
+          <span>GOT HERE.</span>
+        </h2>
+
+        <p>
+          A timeline of my development journey, from academic training to
+          freelance software development.
+        </p>
+      </div>
+    </div>
+
+    <div class="experience-list">
+      @for (experience of experiences; track experience.number) {
+        <article class="experience-item reveal">
+          <!-- YEAR -->
+          <div class="experience-year">
+            {{ experience.year }}
+          </div>
+
+          <!-- TIMELINE MARKER -->
+          <div class="experience-marker">
+            <span></span>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="experience-content">
+            <div class="experience-top">
+              <div>
+                <span class="experience-type">
+                  {{ experience.type }}
+                </span>
+
+                <h3>
+                  {{ experience.title }}
+                  <span>{{ experience.subtitle }}</span>
+                </h3>
+              </div>
+
+              <span class="experience-number">
+                {{ experience.number }}
+              </span>
+            </div>
+
+            <p>
+              {{ experience.description }}
+            </p>
+
+            <div class="experience-tags">
+              @for (tag of experience.tags; track tag) {
+                <span>
+                  {{ tag }}
+                </span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SKILLS
+  ================================================== -->
+
+  <section id="skills" class="skills-section">
+    <div class="skills-header">
+      <span class="section-index">03</span>
+
+      <span class="section-label">EXPERTISE</span>
+
+      <h2 class="huge-title">
+        WHAT<br />
+        <span>I DO.</span>
+      </h2>
+    </div>
+
+    <div class="skills-list">
+      @for (skill of skills; track skill.number) {
+        <article class="skill-row hover-title">
+          <div class="skill-number">
+            {{ skill.number }}
+          </div>
+
+          <div class="skill-icon">
+            <i class="bx" [class]="skill.icon"></i>
+          </div>
+
+          <div class="skill-info">
+            <h3>
+              {{ skill.title }}
+            </h3>
+
+            <p>
+              {{ skill.description }}
+            </p>
+          </div>
+
+          <div class="skill-arrow">↗</div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- ==================================================
+       ABOUT
+  ================================================== -->
+
+  <section id="about" class="about-section">
+    <div class="about-image-wrap reveal">
+      <div class="about-image">
+        <img
+          src="images/profile.webp"
+          alt="Ivan Santos"
+          width="800"
+          height="800"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="about-label">
+        <span>IVAN SANTOS</span>
+        <span>2026</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div>
+        <span class="section-index">04</span>
+        <span class="section-label">ABOUT ME</span>
+      </div>
+
+      <h2 class="huge-title reveal">
+        BUILDING<br />
+        <span>WITH PURPOSE.</span>
+      </h2>
+
+      <p class="about-description reveal">
+        I'm Ivan, a freelance software developer focused on building modern,
+        reliable and visually engaging digital products.
+
+        <br /><br />
+
+        I work across web and mobile development, from responsive interfaces and
+        mobile applications to APIs, databases and AI-powered experiences. My
+        strongest technologies are Angular and Flutter, while also working with
+        React, ASP.NET, Node.js, Firebase, Supabase and other modern tools.
+
+        <br /><br />
+
+        I care about more than just making things work — I aim to create digital
+        products that are clean, practical, performant and enjoyable to use.
+      </p>
+
+      <div class="about-tags">
+        <!-- FRONTEND -->
+        <span>ANGULAR</span>
+        <span>REACT</span>
+        <span>HTML / CSS</span>
+        <span>TYPESCRIPT</span>
+        <span>JAVASCRIPT</span>
+        <span>TAILWIND CSS</span>
+        <span>LEAFLET</span>
+
+        <!-- MOBILE -->
+        <span>FLUTTER</span>
+
+        <!-- BACKEND -->
+        <span>ASP.NET</span>
+        <span>NODE.JS</span>
+        <span>EXPRESS.JS</span>
+        <span>PHP</span>
+
+        <!-- DATABASE -->
+        <span>MYSQL</span>
+        <span>SUPABASE</span>
+        <span>FIREBASE</span>
+
+        <!-- TOOLS -->
+        <span>POSTMAN</span>
+        <span>VERCEL</span>
+        <span>HOSTINGER</span>
+
+        <!-- AI -->
+        <span>CHATGPT</span>
+        <span>N8N</span>
+        <span>AI AUTOMATION</span>
+
+        <!-- DESIGN -->
+        <span>FIGMA</span>
+        <span>CANVA</span>
+        <span>ADOBE XD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       GITHUB
+  ================================================== -->
+
+  <section class="github-section" id="github">
+    <div class="github-header">
+      <div class="section-meta">
+        <span class="section-index">05</span>
+        <span class="section-label">OPEN SOURCE</span>
+      </div>
+
+      <div class="github-heading">
+        <h2 class="huge-title">
+          CODE<br />
+          <span>IN PUBLIC.</span>
+        </h2>
+
+        <p>
+          I build, experiment and ship software in public — from web and mobile
+          applications to AI-powered tools and developer experiments.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROFILE + ACTIVITY -->
+
+    <div class="github-content">
+      <!-- PROFILE -->
+
+      <div class="github-profile">
+        <div class="github-profile-top">
+          <div class="github-avatar-wrap">
+            <img
+              src="https://github.com/DevSantosivan.png"
+              alt="Ivan Santos GitHub profile"
+              class="github-avatar"
+              width="96"
+              height="96"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <span class="github-online"></span>
+          </div>
+
+          <div class="github-profile-info">
+            <span class="github-label">GITHUB PROFILE</span>
+
+            <h3>Ivan Santos</h3>
+
+            <p>Full Stack Software Developer</p>
+
+            <small>Angular · React · Flutter · Node.js · AI</small>
+          </div>
+        </div>
+
+        <div class="github-profile-bottom">
+          <div class="github-status">
+            <span></span>
+            ACTIVE ON GITHUB
+          </div>
+
+          <a
+            href="https://github.com/DevSantosivan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link magnetic"
+          >
+            <span>VISIT GITHUB</span>
+            <strong>↗</strong>
+          </a>
+        </div>
+      </div>
+
+      <!-- ACTIVITY -->
+
+      <div class="github-activity">
+        <div class="github-activity-header">
+          <div>
+            <span class="github-label">ACTIVITY</span>
+
+            <h3>
+              CONTRIBUTION<br />
+              HISTORY.
+            </h3>
+          </div>
+
+          <span class="github-symbol">⌘</span>
+        </div>
+
+        <div class="github-calendar">
+          <img
+            src="https://ghchart.rshah.org/DevSantosivan"
+            alt="GitHub contribution graph for Ivan Santos"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="github-activity-footer">
+          <span>LIVE GITHUB ACTIVITY</span>
+
+          <a
+            href="https://github.com/DevSantosivan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DevSantosivan ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================
+         GITHUB STATS
+    ================================================== -->
+
+    <div class="github-stats">
+      <div class="github-stat">
+        <span class="github-stat-label">REPOSITORIES</span>
+        <strong>20+</strong>
+      </div>
+
+      <div class="github-stat">
+        <span class="github-stat-label">PUBLIC PROJECTS</span>
+        <strong>15+</strong>
+      </div>
+
+      <div class="github-stat">
+        <span class="github-stat-label">LANGUAGES</span>
+        <strong>10+</strong>
+      </div>
+
+      <div class="github-stat github-stat-live">
+        <span class="github-stat-label">STATUS</span>
+
+        <strong>
+          <span class="live-dot"></span>
+          BUILDING
+        </strong>
+      </div>
+    </div>
+
+    <!-- ==================================================
+         GITHUB TERMINAL
+    ================================================== -->
+
+    <div class="github-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <span class="terminal-title"> DevSantosivan ~ /projects </span>
+
+        <span class="terminal-symbol">_</span>
+      </div>
+
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span>git status</span>
+        </div>
+
+        <div class="terminal-output">On branch main</div>
+
+        <div class="terminal-output success">✓ Working tree clean</div>
+
+        <div class="terminal-line terminal-space">
+          <span class="terminal-prompt">$</span>
+          <span>git log --oneline -3</span>
+        </div>
+
+        <div class="terminal-output">
+          <span>01</span> building digital products
+        </div>
+
+        <div class="terminal-output"><span>02</span> experimenting with AI</div>
+
+        <div class="terminal-output"><span>03</span> shipping new ideas</div>
+
+        <div class="terminal-cursor">
+          <span class="terminal-prompt">$</span>
+          <span class="blink">▋</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       CONTACT
+  ================================================== -->
+
+  <section id="contact" class="contact-section">
+    <div class="contact-small">HAVE A PROJECT IN MIND?</div>
+
+    <h2>
+      LET'S BUILD<br />
+      <span>SOMETHING</span>
+      <br />
+      GREAT.
+    </h2>
+
+    <a href="mailto:dev.ivansantos04@gmail.com" class="contact-button magnetic">
+      START A CONVERSATION
+      <span>↗</span>
+    </a>
+  </section>
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+    <div class="footer-brand">IS<span>.</span></div>
+
+    <div class="footer-copy">© 2026 IVAN SANTOS</div>
+
+    <div class="footer-links">
+      <a href="#home">TOP ↑</a>
+
+      <a
+        href="https://github.com/DevSantosivan"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GITHUB
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/ivan-santos-9414a33a3/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LINKEDIN
+      </a>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       AI CHATBOT
+  ================================================== -->
+
+  <div class="portfolio-chatbot" [class.open]="chatbotOpen">
+    <button
+      class="chatbot-toggle"
+      type="button"
+      (click)="toggleChatbot()"
+      [attr.aria-label]="chatbotOpen ? 'Close chatbot' : 'Open chatbot'"
+    >
+      @if (!chatbotOpen) {
+        <i class="bx bx-message-rounded-dots"></i>
+      } @else {
+        <i class="bx bx-x"></i>
+      }
+    </button>
+
+    @if (chatbotOpen) {
+      <div class="chatbot-panel">
+        <!-- HEADER -->
+
+        <div class="chatbot-header">
+          <div class="chatbot-header-info">
+            <span class="chatbot-status"></span>
+
+            <strong>IVAN AI</strong>
+
+            <small>Portfolio Assistant</small>
+          </div>
+
+          <button
+            type="button"
+            class="chatbot-close"
+            (click)="toggleChatbot()"
+            aria-label="Close chatbot"
+          >
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+
+        <!-- MESSAGES -->
+
+        <div class="chatbot-messages">
+          @for (message of chatMessages; track $index) {
+            <div class="chat-message" [class.user]="message.role === 'user'">
+              {{ message.text }}
+            </div>
+          }
+        </div>
+
+        <!-- QUICK QUESTIONS -->
+
+        <div class="chatbot-suggestions">
+          <button
+            type="button"
+            (click)="askChatbot('What projects has Ivan built?')"
+          >
+            Projects
+          </button>
+
+          <button
+            type="button"
+            (click)="askChatbot('What technologies does Ivan use?')"
+          >
+            Tech stack
+          </button>
+
+          <button type="button" (click)="askChatbot('Tell me about Ivan.')">
+            About Ivan
+          </button>
+
+          <button type="button" (click)="askChatbot('How can I contact Ivan?')">
+            Contact
+          </button>
+        </div>
+
+        <!-- INPUT -->
+
+        <form class="chatbot-input" (submit)="sendChatMessage($event)">
+          <input
+            type="text"
+            [(ngModel)]="chatInput"
+            name="chatInput"
+            placeholder="Ask me anything..."
+            autocomplete="off"
+          />
+
+          <button type="submit" aria-label="Send message">
+            <i class="bx bx-send"></i>
+          </button>
+        </form>
+      </div>
+    }
+  </div>
+</div>
